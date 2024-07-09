@@ -1,5 +1,5 @@
-@ex@section("container")
-tends('layouts.main')
+@extends('layouts.main')
+@section("container")
    <div class="px-7 md:px-10 lg:px-40 mt-4 container space-y-6">
       <x-homepage.promote-banner :title="['test', 'ajah']"></x-homepage.promote-banner>
 
