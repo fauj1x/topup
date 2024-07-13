@@ -1,19 +1,18 @@
 <div id="default-carousel" class="group relative w-full mx-auto carousel-container" data-carousel="slide">
    <!-- Carousel wrapper -->
    {{-- image must have 16/4 ratio --}}
-   <div class="relative w-full aspect-w-16 aspect-h-6 md:aspect-h-4 overflow-hidden rounded-xl">
+   <div class="relative w-full aspect-w-5 aspect-h-3 md:aspect-w-16 md:aspect-h-5 overflow-hidden">
       @foreach ($images as $image)
-         <!-- Item 1 -->
          <div class="hidden duration-[1300ms] ease-in-out" data-carousel-item>
-            <img src="/assets/{{ $image }}" class="absolute block w-full h-full object-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <img src="/uploads/accounts/{{ $image }}" class="absolute block w-full h-full object-center object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
          </div>
       @endforeach
    </div>
-
+   
    <!-- Slider indicators -->
-   <div class="absolute z-30 flex -translate-x-1/2 bottom-3 lg-bottom-5 left-1/2 space-x-1.5 rtl:space-x-reverse">
+   <div class="absolute z-30 flex -translate-x-1/2 bottom-3 lg-bottom-5 left-1/2 space-x-2 rtl:space-x-reverse">
       @for ($i = 1; $i <= count($images); $i++)
-         <button type="button" class="w-4 md:w-6 h-1 md:h-1.5 rounded-full" aria-current="{{ $i == 1? 'true' : 'false' }}" aria-label="Slide {{ $i }}" data-carousel-slide-to="0"></button>
+         <button type="button" class="w-1.5 md:w-2 h-1.5 md:h-2 rounded-full" aria-current="{{ $i == 1? 'true' : 'false' }}" aria-label="Slide {{ $i }}" data-carousel-slide-to="0"></button>
       @endfor
    </div>
 

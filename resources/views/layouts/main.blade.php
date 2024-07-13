@@ -16,10 +16,24 @@
   <title>Home</title>
 </head>
 <body class="font-body">
-  @include('components.navbar.navbar')
+  @if (Request::is("account/*"))
+    @include('components.navbar.account-navbar')
+  @else
+    @include('components.navbar.navbar')
+  @endif
 
   @yield('container')
 
   <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+  {{-- <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const carousel = FlowbiteInstances.getInstance('Carousel', 'default-carousel');
+
+      carousel._options.indicators.activeClasses = ""
+
+      console.log(carousel);
+    });
+  </script> --}}
 </body>
 </html>

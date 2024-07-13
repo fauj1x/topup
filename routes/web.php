@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,4 +21,16 @@ Route::get('/home', function () {
 
 Route::get('/profile', function () {
     return view('users.profile.profile');
+});
+
+Route::get('/account/{id}', function($id) {
+    return view('account');
+});
+
+Route::post('/account/request', function(Request $request) {
+    dd($request->all());
+});
+
+Route::get('/topup/{id}', function($id) {
+    return view('topup');
 });
